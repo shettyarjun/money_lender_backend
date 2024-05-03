@@ -1,0 +1,39 @@
+Create:
+Model.create(documents)
+Example: const newDoc = await Model.create({ key: value });
+Model.insertMany(documents)
+Example: const newDocs = await Model.insertMany([{ key: value }]);
+
+Read:
+Model.find(conditions, projection)
+Example: const docs = await Model.find({ key: value });
+Model.findOne(conditions, projection)
+Example: const doc = await Model.findOne({ key: value });
+Model.findById(id, projection)
+Example: const doc = await Model.findById('id_value');
+
+Update:
+Model.updateOne(conditions, update)
+Example: await Model.updateOne({ key: value }, { $set: { keyToUpdate: newValue } });
+Model.updateMany(conditions, update)
+Example: await Model.updateMany({ key: value }, { $set: { keyToUpdate: newValue } });
+Model.findOneAndUpdate(conditions, update, options)
+Example: await Model.findOneAndUpdate({ key: value }, { $set: { keyToUpdate: newValue } }, { new: true });
+
+Delete:
+Model.deleteOne(conditions)
+Example: await Model.deleteOne({ key: value });
+Model.deleteMany(conditions)
+Example: await Model.deleteMany({ key: value });
+
+Count:
+Model.countDocuments(conditions)
+Example: const count = await Model.countDocuments({ key: value });
+
+Aggregation:
+Model.aggregate(pipeline)
+Example: const result = await Model.aggregate([{ $match: { key: value } }]);
+
+Indexing:
+Model.createIndexes()
+Example: await Model.createIndexes();
