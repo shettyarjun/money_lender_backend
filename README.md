@@ -16,6 +16,22 @@ I tried to code this with little reference to understand node better, so if any 
     ```
 4. Start the server by running `npm start` or `nodemon server.js`.
 
+## Docker image
+    pull from dockerhub and run your container
+
+    ```
+    docker pull shettyarjun/money_lender
+    docker images
+    docker run -d -p 3000:3000 shettyarjun/money_lender
+    docker ps
+
+    In postman http://localhost:3000  and perform the request
+
+    docker stop <container_id or container_name>
+    docker rm <container_id or container_name>
+
+
+    ```
 ## Endpoints for (http://localhost:3000)
 
 ### 1. Register User
