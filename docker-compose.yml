@@ -1,0 +1,25 @@
+version: "3.9"
+services:
+ # Mongodb service
+  mongo_db:
+    container_name: db_container
+    image: mongo:latest
+    volumes:
+      - mongo_data:/data/db
+
+  # Node api service
+  app:
+    build: .
+    ports:
+      # local->container
+      - 3000:3000
+    environment:
+      PORT: 3000
+      MONGODB_URI: mongodb://mongo_db:27017
+      DB_NAME: money_lend
+    depends_on: 
+      - mongo_db
+
+volumes:
+  mongo_data: {}
+  
