@@ -7,7 +7,7 @@ services:
     volumes:
       - mongo_data:/data/db
 
-  # Node api service
+  # Node app service
   app:
     build: .
     ports:
